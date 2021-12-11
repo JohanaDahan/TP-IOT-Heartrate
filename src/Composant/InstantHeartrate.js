@@ -1,18 +1,20 @@
 function InstantHeartrate(props){
     const {data} = props
-    let couleur = "rythmeBas"
+    let couleur = "BPMNormal"
   
-    if (!data){return(<p>Pas de valeurs</p>)}
+    if (!data){return(<p>Aucune valeur</p>)}
   
-    if(data.heartrate > 60 && data.heartrate < 160){
-      couleur = "rythmeNormal"
+    if(data.heartrate > 40 && data.heartrate < 70){
+      couleur = "BPMTropBas"
     }
     if(data.heartrate > 160){
-      couleur = "rythmeEleve"
+      couleur = "BPMTropEleve"
     }
-  
+    else{
+        couleur= "BPMNormal"
+        }
     return(
-      <div className={couleur}>Rythme cardiaque : {data.heartrate}</div>
+      <div className={couleur}> {data.heartrate} BPM </div>
     )
   }
   

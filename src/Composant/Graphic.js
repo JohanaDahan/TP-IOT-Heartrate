@@ -9,8 +9,8 @@ function Graphic(props){
 
   return (
     <div>
-      <LineChart width={1000} height={400} data={liste}>
-        <Line type="monotone" dataKey="heartrate" stroke="#8884d8" />
+      <LineChart width={1000} height={300} data={liste}>
+        <Line type="monotone" dataKey="heartrate" stroke="blue" />
         <CartesianGrid stroke="#ccc" />
         <XAxis dataKey="heure" />
         <YAxis/>
