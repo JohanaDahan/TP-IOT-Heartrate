@@ -1,8 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 import InstantHeartrate from "./Composant/InstantHeartrate";
-
-
+import Graphic from "./Composant/Graphic";
+import { useEffect, useState } from "react";
 
 
 function RH(){
@@ -33,6 +33,7 @@ function App() {
           Rythme cardiaque
         </p>
         <InstantHeartrate data={measurement}/>
+        <Graphic datalist={measurements}/>
       </header>
     </div>
   );
