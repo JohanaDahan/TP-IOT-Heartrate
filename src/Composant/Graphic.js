@@ -1,23 +1,28 @@
-import { LineChart, Line, CartesianGrid, XAxis, YAxis } from 'recharts';
+import {
+    LineChart,
+    Line,
+    XAxis,
+    YAxis,
+    CartesianGrid,
+    Legend,
+} from 'recharts';
 
 function Graphic(props){
-  const {datalist} = props
+    const {datalist} = props
   const liste = datalist.map((elem) => ({
     heartrate: elem.heartrate,
-    heure: new Date(elem.timestamp).toLocaleTimeString('fr-FR'),
+    timestamp: new Date(elem.timestamp).toLocaleTimeString('fr-FR'),
   }))
-
-  return (
-    <div>
-      <LineChart width={1000} height={400} data={liste}>
-        <Line type="monotone" dataKey="heartrate" stroke="#8884d8" />
-        <CartesianGrid stroke="#ccc" />
-        <XAxis dataKey="heure" />
-        <YAxis/>
-      </LineChart>
-    </div>
-
-  );
+ 
+return (
+    <LineChart width={1200} height={400} data={liste}>
+        <Line type="monotone" dataKey="heartrate" stroke="#82ca9d" />
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="timestamp" />
+        <YAxis dataKey="heartrate"/>
+        <Legend />
+    </LineChart>
+);
 }
 
 export default Graphic;

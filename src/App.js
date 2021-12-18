@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import InstantHeartrate from "./Composant/InstantHeartrate";
-import Graphic from "./Composant/Graphic";
+import Graphic from "./Composant/Graphic"
 import { useEffect, useState } from "react";
 
 
